@@ -17,8 +17,8 @@ public class Cat implements Participant {
 
     @Override
     public void run() {
-        if (run <= maxRun) {
-            Treadmill treadmill = new Treadmill(100);
+        Treadmill treadmill = new Treadmill(100);
+        if (run <= maxRun && run >= treadmill) {
             System.out.print("Participant " + name);
             treadmill.overcome();
         } else {
