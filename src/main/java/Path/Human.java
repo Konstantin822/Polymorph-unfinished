@@ -14,21 +14,23 @@ public class Human implements Participant {
         this.maxRun = maxRun;
         this.maxJump = maxJump;
     }
+
     @Override
     public void run() {
+        Treadmill treadmill = new Treadmill(150);
         if (run <= maxRun) {
-            Treadmill treadmill = new Treadmill(100);
             System.out.print("Participant " + name);
             treadmill.overcome();
         } else {
-            System.out.println("Participant " + name + " did not overcame the obstacle of the running track at a distance of 200 m. "
+            System.out.println("Participant " + name + " did not overcame the treadmill obstacle track at a distance of 200 m. "
                     + "The participant " + name + " overcame " + run + " m." );
         }
     }
+
     @Override
     public void jump() {
-        if (jump <= maxJump) {
-            Wall wall = new Wall(5);
+        if (run <= maxRun) {
+            Wall wall = new Wall(3);
             System.out.print("Participant " + name);
             wall.overcome();
         } else {
