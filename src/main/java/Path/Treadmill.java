@@ -5,8 +5,11 @@ public class Treadmill implements Obstacle {
     public Treadmill(int range) {
         this.range = range;
     }
+    public int getRange(int range) {
+        return range;
+    }
     @Override
     public void overcome() {
-        System.out.println(" overcame the treadmill obstacle at a distance of " + range + " m.");
+        System.out.println("overcome " + range);
     }
 }

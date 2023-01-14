@@ -10,30 +10,37 @@ public class Main {
         Circle circle = new Circle(6);
         Square square = new Square(5);
         Triangle triangle = new Triangle(4, 5);
-
         Shape[] shapes = {circle, square, triangle};
 
         double totalSum = 0;
-        for (Shape x : shapes) {
+        for (Shape x: shapes) {
             x.getArea();
             totalSum += x.getArea();
         }
-        System.out.println("Total shapes sum = " + totalSum);
+        System.out.println("Total area sum = " + totalSum);
 
-
-        Cat cat = new Cat("Murzik", 150, 3, 150, 3);
-        Human human = new Human("Bob", 200, 5, 200, 5);
-        Robot robot = new Robot("Boston dynamics", 10, 1, 20, 2);
+        Cat cat = new Cat("Murzik", 100, 3);
+        Human human = new Human("Bob");
+        Robot robot = new Robot("Boston");
 
         Treadmill treadmill = new Treadmill(150);
-        Wall wall = new Wall(3);
+        Wall wall = new Wall(5);
 
-        Participant[] participants = {cat, human, robot};
-        Obstacle[] obstacles = {treadmill, wall};
+        Participant[] participants = new Participant[] {
+                cat, human, robot
+        };
+        Obstacle[] obstacles = new Obstacle[] {
+                treadmill, wall
+        };
 
-        for (Participant participant : participants) {
-            participant.run();
-            participant.jump();
+        for (Participant p : participants) {
+            for (Obstacle o : obstacles) {
+                p.runTreadmill();
+                o.overcome();
+                p.jumpWall();
+                o.overcome();
+            }
         }
+
     }
 }

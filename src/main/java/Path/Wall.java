@@ -5,8 +5,13 @@ public class Wall implements Obstacle {
     public Wall(int height) {
         this.height = height;
     }
+
+    public int getHeight(int height) {
+        return height;
+    }
+
     @Override
     public void overcome() {
-        System.out.println(" overcame the wall obstacle at a distance of " + height + " m.");
+        System.out.println("overcome " + height);
     }
 }
